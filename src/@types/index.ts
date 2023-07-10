@@ -6,5 +6,5 @@ export interface PostData {
 }
 
 export type PostDataWithContent = {
-  contentHtml: string | TrustedHTML
+  contentHtml: string
 } & PostData
