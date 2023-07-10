@@ -3,8 +3,9 @@ import path from 'path'
 import matter from 'gray-matter'
 import {remark} from 'remark'
 import html from 'remark-html'
-import {PostData} from '../@types'
+import {PostData} from '../src/@types'
 
+// cwd: current working directory
 const postsDirectory = path.join(process.cwd(), '__posts')
 
 export function getAllPost(): PostData[] {
