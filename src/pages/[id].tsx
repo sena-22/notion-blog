@@ -4,11 +4,16 @@ import {PostDataWithContent} from '../@types'
 
 export default function Post({post}: {post: PostDataWithContent}) {
   return (
-    <div className={`flex min-h-screen flex-col p-24`}>
-      <h1 className="text-3xl">{post.title}</h1>
-      <div>{post.date}</div>
-      <div className="mt-3 text-xl" dangerouslySetInnerHTML={{__html: post.contentHtml}}></div>
-      <Link href={'/'}>Go Home</Link>
+    <div className={`flex min-h-screen flex-col p-24 max-w-7xl align-items-center ml-10`}>
+      <h1 className="mt-10 text-3xl dark:text-white/90">{post.title}</h1>
+      <div className="mt-5 mb-5 text-sm dark:text-white/70">{post.date}</div>
+      <div
+        className="mt-10 text-2xl leading-relaxed dark:text-white/70"
+        dangerouslySetInnerHTML={{__html: post.contentHtml}}
+      ></div>
+      <Link href={'/'} className="mt-5 text-xl text-sky-800">
+        main
+      </Link>
     </div>
   )
 }
