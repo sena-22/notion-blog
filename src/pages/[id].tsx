@@ -8,10 +8,7 @@ export default function Post({postData}: {postData: PostDataWithContent}) {
       <div className="mt-5 text-3xl dark:text-white/90">{postData.title}</div>
       <div className="mt-5 mb-5 text-sm dark:text-white/70">{postData.date}</div>
       <div className="mt-5 text-2xl leading-relaxed dark:text-white/70">
-        <div
-          className="prose dark:prose-invert"
-          dangerouslySetInnerHTML={{__html: `<div>${postData.contentHtml}</div>`}}
-        ></div>
+        <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{__html: postData.contentHtml}}></div>
       </div>
       <Link href={{pathname: '/'}} className="mt-5 text-xl text-sky-800">
         main

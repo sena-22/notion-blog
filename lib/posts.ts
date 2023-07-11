@@ -3,8 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import {PostData} from '../src/@types'
 import {remark} from 'remark'
-import remarkRehype from 'remark-rehype'
-import rehypeStringify from 'rehype-stringify'
+import html from 'remark-html'
 
 // cwd: current working directory
 const postsDirectory = path.join(process.cwd(), '__posts')
@@ -52,11 +51,8 @@ export function getAllPostIds() {
 export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-
   const matterResult = matter(fileContents)
-
-  const remarkedContent = await remark().use(remarkRehype).use(rehypeStringify).process(matterResult.content)
-
+  const remarkedContent = await remark().use(html).process(matterResult.content)
   const contentHtml = remarkedContent.toString()
 
   return {
