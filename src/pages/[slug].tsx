@@ -14,7 +14,7 @@ export default function Post({post}: PostProps) {
     <div className="flex flex-col min-h-screen p-20 ">
       <div className="mt-5 text-3xl dark:text-white/90">{post.metadata.title}</div>
       <div className="mt-5 mb-5 text-sm dark:text-white/70">{post.metadata.date}</div>
-      <div className="mt-5 text-2xl leading-relaxed dark:text-white/70">
+      <div className="mt-5 leading-relaxed prose dark:text-white/70 dark:prose-invert">
         <ReactMarkdown
           components={{
             code({node, inline, className, children, ...props}) {
@@ -36,6 +36,7 @@ export default function Post({post}: PostProps) {
               )
             },
           }}
+          className="prose-pre:bg-[#1e1e1e] "
         >
           {post.markdown.parent}
         </ReactMarkdown>
