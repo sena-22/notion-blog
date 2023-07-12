@@ -9,7 +9,7 @@ export const getStaticProps = async () => {
     props: {
       posts,
     },
-    revalidate: 60 * 60 * 6, //6시간마다 갱신(ISR)
+    revalidate: 300,
   }
 }
 
