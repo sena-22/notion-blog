@@ -1,23 +1,11 @@
+// NOTE: page의 index.tsx
+
 import Link from 'next/link'
 import {PostData} from '../@types'
-import {getAllPosts} from '../../lib/notionAPI'
+import {getAllPosts} from '../lib/notionAPI'
 
-export const getStaticProps = async () => {
-  const posts = await getAllPosts()
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 300,
-  }
-}
-
-interface HomeProps {
-  posts: PostData[]
-}
-
-export default function Home({posts}: HomeProps) {
+export default async function Home() {
+  const posts: PostData[] = await getAllPosts()
   return (
     <main className="flex flex-col min-h-screen ">
       <h1 className="mt-10 ml-10 text-3xl dark:text-white/90">Untitled</h1>
