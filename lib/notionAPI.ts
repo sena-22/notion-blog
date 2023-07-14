@@ -27,7 +27,6 @@ const getPageMetaData = (post: any) => {
     })
     return allTags
   }
-
   return {
     id: post.id,
     title: post.properties.Name.title[0].plain_text,

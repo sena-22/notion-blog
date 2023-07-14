@@ -1,3 +1,5 @@
+export const revalidate = 600
+
 import Link from 'next/link'
 import {getAllPosts, getSinglePost} from '../../lib/notionAPI'
 import dynamic from 'next/dynamic'
