@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import {getAllPosts, getSinglePost} from '../../lib/notionAPI'
-import Markdown from '../../components/Markdown'
-import {Metadata} from 'next'
+import dynamic from 'next/dynamic'
+
+const Markdown = dynamic(() => import('../../components/Markdown'))
 
 export async function generateMetadata({params}: {params: {slug: string}}) {
   const slug = params.slug
