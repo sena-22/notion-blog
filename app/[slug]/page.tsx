@@ -13,6 +13,12 @@ export async function generateMetadata({params}: {params: {slug: string}}) {
   return {title: post.metadata.title}
 }
 
+export async function generateStaticParams() {
+  const allPosts = await getAllPosts()
+  const paths = allPosts.map(({slug}) => ({params: {slug}}))
+  return paths
+}
+
 export default async function Post({params}: any) {
   const post = await getSinglePost(params.slug)
 
@@ -29,10 +35,4 @@ export default async function Post({params}: any) {
       </Link>
     </div>
   )
-}
-
-export async function generateStaticParams() {
-  const allPosts = await getAllPosts()
-  const paths = allPosts.map(({slug}) => ({params: {slug}}))
-  return paths
 }

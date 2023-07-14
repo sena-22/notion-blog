@@ -1,5 +1,3 @@
-// NOTE: page의 index.tsx
-
 import Link from 'next/link'
 import {PostData} from '../@types'
 import {getAllPosts} from '../lib/notionAPI'
