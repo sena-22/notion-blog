@@ -22,7 +22,7 @@ const Markdown = ({markdown}: {markdown: string}) => {
           )
         },
       }}
-      className="prose-pre:bg-[#1e1e1e]"
+      className="prose-pre:bg-[#1e1e1e] "
     >
       {markdown}
     </ReactMarkdown>

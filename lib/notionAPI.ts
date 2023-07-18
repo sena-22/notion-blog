@@ -1,5 +1,6 @@
 import {Client} from '@notionhq/client'
 import {NotionToMarkdown} from 'notion-to-md'
+import {NUMBER_OF_POSTS_PER_PAGE} from '../constants/constants'
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -52,4 +53,28 @@ export const getSinglePost = async (slug: string) => {
   const mdBlock = await n2m.pageToMarkdown(page.id)
   const mdString = n2m.toMarkdownString(mdBlock)
   return {metadata, markdown: mdString}
+}
+
+/* Home Page용 */
+export const getPostsForTopPage = async () => {
+  const allPosts = await getAllPosts()
+  const slicedPosts = allPosts.slice(0, NUMBER_OF_POSTS_PER_PAGE)
+  return slicedPosts
+}
+
+/* 페이지별 게시글 */
+export const getPostsByPage = async (page: number) => {
+  const allPosts = await getAllPosts()
+  const startIdx = (page - 1) * NUMBER_OF_POSTS_PER_PAGE
+  const endIdx = startIdx + NUMBER_OF_POSTS_PER_PAGE
+  return allPosts.slice(startIdx, endIdx)
+}
+
+/* 페이지 숫자 */
+export const getNumberOfPages = async () => {
+  const allPosts = await getAllPosts()
+
+  return (
+    Math.floor(allPosts.length / NUMBER_OF_POSTS_PER_PAGE) + (allPosts.length % NUMBER_OF_POSTS_PER_PAGE > 0 ? 1 : 0)
+  )
 }
