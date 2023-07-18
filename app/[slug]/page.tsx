@@ -24,7 +24,7 @@ export default async function Post({params}: any) {
 
   return (
     <div className="flex flex-col items-center justify-center max-w-screen-lg p-5 md:p-20 max-h-2xl ">
-      <div className="flex flex-col p-10 text-center rounded  w-[100%] opacity-50 bg-gray-950 dark:opacity-80">
+      <div className="flex flex-col p-10 text-center rounded opacity-50 bg-gray-950 dark:opacity-80 min-w-[90%]">
         <div className="mt-5 text-2xl text-center text-white whitespace-normal lg:px-20 md:text-3xl hover:text-rose-400">
           {post.metadata.title}
         </div>
@@ -37,7 +37,7 @@ export default async function Post({params}: any) {
           ))}
         </div>
       </div>
-      <div className="mt-5 prose dark:text-white/70 dark:prose-invert">
+      <div className="mt-5 prose dark:text-white/70 dark:prose-invert w-[100%]">
         <Markdown markdown={post.markdown.parent} />
       </div>
       <Link href={{pathname: '/'}} className="mt-5 text-xl text-sky-800">
