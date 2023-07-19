@@ -1,7 +1,7 @@
-import Pagination from '../../../components/Pagination/Pagination'
-import SinglePost from '../../../components/SinglePost'
-import Tag from '../../../components/Tag/Tag'
-import {getAllTags, getNumberOfPages, getPostsByPage} from '../../../lib/notionAPI'
+import Pagination from '@/components/Pagination/Pagination'
+import SinglePost from '@/components/SinglePost'
+import Tag from '@/components/Tag/Tag'
+import {getAllTags, getNumberOfPages, getPostsByPage} from '@/lib/notionAPI'
 
 export async function generateStaticParams() {
   const numberOfPage = await getNumberOfPages()

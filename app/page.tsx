@@ -1,8 +1,8 @@
 import {PostData} from '../@types'
-import {getAllTags, getNumberOfPages, getPostsByPage, getPostsForTopPage} from '../lib/notionAPI'
-import Pagination from '../components/Pagination/Pagination'
-import SinglePost from '../components/SinglePost'
-import Tag from '../components/Tag/Tag'
+import {getAllTags, getNumberOfPages, getPostsForTopPage} from '@/lib/notionAPI'
+import Pagination from '@/components/Pagination/Pagination'
+import SinglePost from '@/components/SinglePost'
+import Tag from '@/components/Tag/Tag'
 
 export default async function Home() {
   const posts: PostData[] = await getPostsForTopPage()
