@@ -4,7 +4,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import {getAllPosts, getSinglePost} from '@/lib/notionAPI'
 
-const Markdown = dynamic(() => import('@/components/Markdown/Markdown'))
+const Markdown = dynamic(() => import('@/components/Markdown'))
 
 export async function generateMetadata({params}: {params: {slug: string}}) {
   const slug = params.slug
@@ -42,9 +42,6 @@ export default async function Post({params}: any) {
       <div className="mt-5 prose dark:text-white/70 dark:prose-invert  w-[100%]">
         <Markdown markdown={post.markdown.parent} />
       </div>
-      <Link href={{pathname: '/'}} className="mt-5 text-xl text-sky-800">
-        main
-      </Link>
     </div>
   )
 }

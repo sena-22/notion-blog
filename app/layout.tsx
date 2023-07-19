@@ -1,5 +1,6 @@
 import {Metadata} from 'next'
 import './globals.css'
+import Navigation from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: "Sena's Blog",
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ko">
-      <body className="flex flex-col items-center justify-center dark:bg-zinc-800">{children}</body>
+      <body className="flex flex-col items-center justify-center dark:bg-zinc-800">
+        <Navigation />
+        {children}
+      </body>
     </html>
   )
 }
