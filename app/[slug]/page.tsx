@@ -1,10 +1,10 @@
 export const revalidate = 600
 
 import Link from 'next/link'
-import {getAllPosts, getSinglePost} from '../../lib/notionAPI'
 import dynamic from 'next/dynamic'
+import {getAllPosts, getSinglePost} from '@/lib/notionAPI'
 
-const Markdown = dynamic(() => import('../../components/Markdown'))
+const Markdown = dynamic(() => import('@/components/Markdown/Markdown'))
 
 export async function generateMetadata({params}: {params: {slug: string}}) {
   const slug = params.slug
