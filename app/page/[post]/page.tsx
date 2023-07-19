@@ -1,5 +1,5 @@
-import Pagination from '@/components/Pagination/Pagination'
-import SinglePost from '@/components/SinglePost/SinglePost'
+import Pagination from '@/components/Pagination'
+import SinglePost from '@/components/SinglePost'
 import Tag from '@/components/Tag/Tag'
 import {getAllTags, getNumberOfPages, getPostsByPage} from '@/lib/notionAPI'
 

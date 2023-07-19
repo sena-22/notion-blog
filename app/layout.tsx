@@ -1,6 +1,6 @@
 import {Metadata} from 'next'
 import './globals.css'
-import Navigation from '@/components/Navigation/Navigation'
+import Navigation from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: "Sena's Blog",
