@@ -1,7 +1,7 @@
 import {PostData} from '../@types'
 import {getAllTags, getNumberOfPages, getPostsForTopPage} from '@/lib/notionAPI'
 import Pagination from '@/components/Pagination/Pagination'
-import SinglePost from '@/components/SinglePost'
+import SinglePost from '@/components/SinglePost/SinglePost'
 import Tag from '@/components/Tag/Tag'
 
 export default async function Home() {
