@@ -1,6 +1,7 @@
 import Pagination from '../../../components/Pagination/Pagination'
 import SinglePost from '../../../components/SinglePost'
-import {getNumberOfPages, getPostsByPage} from '../../../lib/notionAPI'
+import Tag from '../../../components/Tag/Tag'
+import {getAllTags, getNumberOfPages, getPostsByPage} from '../../../lib/notionAPI'
 
 export async function generateStaticParams() {
   const numberOfPage = await getNumberOfPages()
@@ -17,6 +18,7 @@ const PageList = async ({params}: any) => {
   const curPage = params?.post || '0'
   const postsByPage = await getPostsByPage(parseInt(curPage.toString(), 10))
   const numberOfPage = await getNumberOfPages()
+  const allTags = await getAllTags()
 
   return (
     <main className="flex flex-col items-center justify-center w-full mt-16 ">
@@ -36,6 +38,7 @@ const PageList = async ({params}: any) => {
         ))}
       </section>
       <Pagination numberOfPage={numberOfPage} />
+      <Tag tags={allTags} />
     </main>
   )
 }
