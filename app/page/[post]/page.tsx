@@ -22,7 +22,6 @@ const PageList = async ({params}: any) => {
 
   return (
     <main className="flex flex-col items-center justify-center w-full mt-16 ">
-      <h1 className="mb-16 text-2xl font-medium text-center dark:text-white dark:hover:text-rose-400">Untitled</h1>
       <section className="flex flex-col justify-center w-5/6 gap-3 mx-auto ">
         {postsByPage.map((post: any) => (
           <div key={post.id}>
