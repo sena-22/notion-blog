@@ -3,6 +3,7 @@ export const revalidate = 600
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import {getAllPosts, getSinglePost} from '@/lib/notionAPI'
+import {ParamsProps} from '@/@types'
 
 const Markdown = dynamic(() => import('@/components/Markdown'))
 
@@ -19,7 +20,7 @@ export async function generateStaticParams() {
   return paths
 }
 
-export default async function Post({params}: any) {
+export default async function Post({params}: ParamsProps) {
   const post = await getSinglePost(params.slug)
 
   return (

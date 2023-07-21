@@ -1,3 +1,4 @@
+import {ParamsProps} from '@/@types'
 import Pagination from '@/components/Pagination'
 import SinglePost from '@/components/SinglePost'
 import Tag from '@/components/Tag/Tag'
@@ -14,7 +15,7 @@ export async function generateStaticParams() {
   return [{paths: params}]
 }
 
-const PageList = async ({params}: any) => {
+const PageList = async ({params}: ParamsProps) => {
   const curPage = params?.post || '0'
   const postsByPage = await getPostsByPage(parseInt(curPage.toString(), 10))
   const numberOfPage = await getNumberOfPages()
@@ -26,6 +27,7 @@ const PageList = async ({params}: any) => {
         {postsByPage.map((post: any) => (
           <div key={post.id}>
             <SinglePost
+              id={post.id}
               title={post.title}
               description={post.description}
               date={post.date}

@@ -1,15 +1,7 @@
 import Link from 'next/link'
+import {PostData} from '@/@types'
 
-type Props = {
-  title: string
-  description: string
-  date: string
-  tags: string[]
-  slug: string
-  isPaginationPage: boolean
-}
-
-const SinglePost = (props: Props) => {
+const SinglePost = (props: PostData) => {
   const {title, description, date, tags, slug} = props
 
   return (
