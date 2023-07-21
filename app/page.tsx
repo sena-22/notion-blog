@@ -12,9 +12,10 @@ export default async function Home() {
   return (
     <main className="flex flex-col items-center justify-center w-full mt-16 ">
       <section className="flex flex-col justify-center w-5/6 gap-3">
-        {posts.map((post: any) => (
+        {posts.map((post: PostData) => (
           <div key={post.id}>
             <SinglePost
+              id={post.id}
               title={post.title}
               description={post.description}
               date={post.date}

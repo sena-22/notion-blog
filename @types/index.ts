@@ -5,6 +5,7 @@ export interface PostData {
   description: string
   slug: string
   tags: string[]
+  isPaginationPage?: boolean
 }
 
 export type PostDataWithContent = {
@@ -14,4 +15,14 @@ export type PostDataWithContent = {
 export type SinglePostData = {
   metadata: PostData
   markdown: {parent: string}
+}
+
+export type ParamsProps = {
+  params: {[key: string]: string}
+}
+
+export type tagResponse = {
+  id: string
+  name: string
+  color: string
 }

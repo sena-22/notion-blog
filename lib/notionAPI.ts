@@ -1,6 +1,7 @@
 import {Client} from '@notionhq/client'
 import {NotionToMarkdown} from 'notion-to-md'
 import {NUMBER_OF_POSTS_PER_PAGE} from '../constants/constants'
+import {tagResponse} from '@/@types'
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -24,8 +25,8 @@ export const getAllPosts = async () => {
 }
 
 const getPageMetaData = (post: any) => {
-  const getTags = (tags: any) => {
-    const allTags = tags.map((tag: any) => {
+  const getTags = (tags: tagResponse[]) => {
+    const allTags = tags.map((tag: tagResponse) => {
       return tag.name
     })
     return allTags

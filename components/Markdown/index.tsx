@@ -21,7 +21,7 @@ const Markdown = ({markdown}: {markdown: string}) => {
           )
         },
       }}
-      className="prose-pre:bg-[#1e1e1e] prose-code:font-normal  prose-code:text-rose-400 prose-code:text-xs prose-code:p-px "
+      className="prose-pre:bg-[#1e1e1e]   prose-code:text-rose-400 prose-code:text-sm prose-code:p-0.5 prose-code:before:content-[''] prose-code:after:content-[''] prose-code:font-medium "
     >
       {markdown}
     </ReactMarkdown>

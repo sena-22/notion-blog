@@ -1,3 +1,4 @@
+import {ParamsProps, PostData} from '@/@types'
 import Pagination from '@/components/Pagination'
 import SinglePost from '@/components/SinglePost'
 import Tag from '@/components/Tag/Tag'
@@ -5,7 +6,7 @@ import {getAllTags, getNumberOfPagesByTag, getPostsByTagAndPage} from '@/lib/not
 
 export const generateStaticParams = async () => {
   const allTags = await getAllTags()
-  let params: any = []
+  let params: {params: {tag: string; page: string}}[] = []
 
   await Promise.all(
     allTags.map(async (tag: string) => {
@@ -24,7 +25,7 @@ export const generateStaticParams = async () => {
   ]
 }
 
-const PageList = async ({params}: any) => {
+const PageList = async ({params}: ParamsProps) => {
   const curPage = params?.page || '0'
   const curTag = params?.tag?.toString()
   const posts = await getPostsByTagAndPage(curTag, parseInt(curPage, 10))
@@ -37,9 +38,10 @@ const PageList = async ({params}: any) => {
         #{curTag}
       </h1>
       <section className="flex flex-col justify-center w-5/6 gap-3 mx-auto ">
-        {posts.map((post: any) => (
+        {posts.map((post: PostData) => (
           <div key={post.id}>
             <SinglePost
+              id={post.id}
               title={post.title}
               description={post.description}
               date={post.date}
