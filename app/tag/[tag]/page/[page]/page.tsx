@@ -1,3 +1,5 @@
+export const revalidate = 60
+
 import {ParamsProps, PostData} from '@/@types'
 import Pagination from '@/components/Pagination'
 import SinglePost from '@/components/SinglePost'

@@ -1,3 +1,5 @@
+export const revalidate = 60
+
 import {PostData} from '../@types'
 import {getAllTags, getNumberOfPages, getPostsForTopPage} from '@/lib/notionAPI'
 import Pagination from '@/components/Pagination'
