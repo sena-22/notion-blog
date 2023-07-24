@@ -1,4 +1,4 @@
-export const revalidate = 600
+export const revalidate = 60
 
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
