@@ -1,4 +1,4 @@
-export const revalidate = 60
+export const revalidate = 600
 
 import {ParamsProps} from '@/@types'
 import Pagination from '@/components/Pagination'
