@@ -11,7 +11,10 @@ const Navigation = () => {
         <div>
           <ul className="flex items-center text-sm sm:py-4">
             <li>
-              <Link href="/" className="block px-4 py-2 transition-all duration-300 hover:text-rose-400">
+              <Link
+                href="/"
+                className="block px-4 py-2 transition-all duration-300 dark:text-white hover:text-rose-400"
+              >
                 Home
               </Link>
             </li>
@@ -19,7 +22,7 @@ const Navigation = () => {
             <li>
               <Link
                 href="https://github.com/sena-22"
-                className="block px-4 py-2 transition-all duration-300 hover:text-rose-400"
+                className="block px-4 py-2 transition-all duration-300 dark:text-white hover:text-rose-400"
               >
                 Github
               </Link>
@@ -28,7 +31,7 @@ const Navigation = () => {
             <li>
               <Link
                 href="https://rienrose.tistory.com/"
-                className="block px-4 py-2 transition-all duration-300 hover:text-rose-400"
+                className="block px-4 py-2 transition-all duration-300 dark:text-white hover:text-rose-400"
               >
                 Tistory
               </Link>
